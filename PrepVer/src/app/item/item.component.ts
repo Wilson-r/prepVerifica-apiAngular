@@ -27,9 +27,9 @@ export class ItemComponent implements OnInit {
 
   getRouterParam = (params: ParamMap) => {
     console.log(params);
-    let itemId = params.get('id'); //Ottengo l'id dai parametri
-    console.log(itemId); //Stampo su console
-    //spotifyServiceObs va dichiarato
+    let itemId = params.get('id'); 
+    console.log(itemId); 
+
     this.foodServiceObs = this.service.searchId(itemId);
     this.foodServiceObs.subscribe(
       (data) => ((this.items = data), console.log(data))
